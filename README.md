@@ -1,4 +1,70 @@
-### Calender
+# Conventional
+
+## convert string to datetime
+```
+date_string = '12/18/15 16:30'
+date, time = date_string.split()
+hr, mn = time.split(':')
+mnth, day, yr = date.split('/')
+
+hr = int(hr)
+mn = int(mn)
+mnth = int(mnth)
+day = int(day)
+yr = int(yr)
+
+import datetime as dt
+date_dt = dt.datetime(yr,mnth,day,hr,mn)
+
+```
+
+
+```
+datetime.strptime(value,format)
+datetime.strptime("24/12/1985","%d/%m/%Y")
+
+date_1_str = "24/12/1984"
+date_1_dt = dt.datetime.strptime(date_1_str, "%d/%m/%Y")
+print(type(date_1_dt))
+print(date_1_dt)
+
+date_2_str = "12-24-1984"
+date_2_dt = dt.datetime.strptime(date_2_str, "%m-%d-%Y")
+print(date_2_dt)
+```
+
+
+```
+The calendar module
+The time module
+The datetime module
+
+The datetime module contains a number of classes, including the following:
+
+import datetime
+datetime.datetime: for working with date and time data
+datetime.time: for working with time data only
+datetime.timedelta: for representing time periods
+
+```
+
+```
+datetime.datetime(year, month, day, hour=0, minute=0, second=0)
+
+import datetime as dt
+eg_1 = dt.datetime(2000, 1, 1)
+print(eg_1)
+
+
+eg_2 = dt.datetime(1985, 3, 13, 21, 26, 2)
+print(eg_2)
+
+eg_3 = dt.datetime(1998, 7, 7, 8, 39)
+print(eg_3)
+
+
+```
+
 
 ```
 import calendar
