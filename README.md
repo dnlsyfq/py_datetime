@@ -1,5 +1,20 @@
 # Conventional
 
+
+```
+visitors_per_month = {}
+
+import datetime as dt 
+
+for row in potus:
+    appt_start_date = row[2]
+    month_year = appt_start_date.strftime("%B, %Y")
+    if month_year not in visitors_per_month:
+        visitors_per_month[month_year] = 1
+    else:
+        visitors_per_month[month_year] += 1
+```
+
 ## convert string to datetime
 ```
 date_string = '12/18/15 16:30'
