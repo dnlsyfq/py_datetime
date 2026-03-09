@@ -127,3 +127,106 @@ output datetime as iso standard
 %m i.e 01,02...12
 %Y i.e 0001,2014...2022
 ```
+
+```
+datetime.time(hour=0, minute=0, second=0, microsecond=0)
+
+two_thirty = dt.time(14, 30)
+print(two_thirty)
+
+five_sec_after_8am = dt.time(8,0,5)
+print(five_sec_after_8am)
+
+
+jfk_shot_dt = dt.datetime(1963, 11, 22, 12, 30)
+print(jfk_shot_dt)
+
+
+jfk_shot_t = jfk_shot_dt.time()
+print(jfk_shot_t)
+
+time_str = "8:00"
+time_dt = dt.datetime.strptime(time_str,"%H:%M")
+print(time_dt)
+
+time_t = time_dt.time()
+print(time_t)
+
+
+```
+
+### Comparing times
+
+```
+t1 = dt.time(15, 30)
+t2 = dt.time(10, 45)
+
+comparison = t1 > t2
+print(comparison) // true
+
+times = [
+           dt.time(23, 30),
+           dt.time(14, 45),
+           dt.time(8, 0)
+        ]
+
+print(min(times))
+print(max(times))
+```
+
+### comparing dates
+```
+dt1 = dt.datetime(2022, 4, 14)
+dt2 = dt.datetime(2022, 3, 29)
+
+ timedelta type represents a period of time, compared to the other classes we've seen which represent a specific moment in time.
+
+print(dt1 - dt2)
+diff = dt1 - dt2
+print(type(diff))
+
+datetime.timedelta(days=0, seconds=0, microseconds=0,
+                   milliseconds=0, minutes=0, hours=0, weeks=0)
+
+
+```
+
+```
+two_days = dt.timedelta(2)
+print(two_days)
+
+three_weeks = dt.timedelta(weeks=3)
+print(three_weeks)
+
+one_hr_ten_mins = dt.timedelta(hours=1, minutes=10)
+print(one_hr_ten_mins)
+
+```
+
+add to static times
+```
+d1 = dt.date(1963, 2, 21)
+d1_plus_1wk = d1 + dt.timedelta(weeks=1)
+print(d1_plus_1wk) // 1963-02-28
+```
+
+```
+dt_1 = dt.datetime(1981, 1, 31)
+dt_2 = dt.datetime(1984, 6, 28)
+dt_3 = dt.datetime(2016, 5, 24)
+dt_4 = dt.datetime(2001, 1, 1, 8, 24, 13)
+
+answer_1 = dt_2 - dt_1
+answer_2 = dt_3 + dt.timedelta(days=56)
+answer_3 = dt_4 - dt.timedelta(seconds=3600)
+```
+
+```
+length_counts = {
+                  dt.timedelta(minutes=15): 21,
+                  dt.timedelta(hours=3): 1,
+                  dt.timedelta(seconds=45): 15
+                }
+min_length = min(length_counts)
+print(min_length)
+```
