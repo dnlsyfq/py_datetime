@@ -65,6 +65,14 @@ print(eg_3)
 
 ```
 
+```
+import datetime as dt
+
+date_format = "%m/%d/%y %H:%M"
+
+for row in potus:
+    row[2] = dt.datetime.strptime(row[2],date_format)
+```
 
 ```
 import calendar
@@ -82,6 +90,27 @@ from datetime import datetime
 current_time = datetime.now()
 
 print(current_time)
+```
+
+## convert datetime to string 
+
+```
+dt_object = dt.datetime(1984, 12, 24)
+day = dt_object.day
+month = dt_object.month
+year = dt_object.year
+dt_string = f"{day}/{month}/{year}"
+print(dt_string) // 24/12/1984
+
+dt_object = dt.datetime(1984, 12, 24)
+dt_string = dt_object.strftime("%d/%m/%Y")
+print(dt_string)
+
+dt_string = dt_object.strftime("%B %d, %Y")
+print(dt_string) // December 24, 1984
+
+dt_string = dt_object.strftime("%A %B %d at %I:%M %p")
+print(dt_string) // Monday December 24 at 12:00 AM
 ```
 
 ### datetime
